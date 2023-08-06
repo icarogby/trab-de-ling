@@ -1,0 +1,11 @@
+CREATE DATABASE baseDeDados;
+USE tabela;
+CREATE TABLE id (idade INT, nome CHAR, nascimento DATE);
+INSERT INTO id1 (id2, id3) VALUES (45, 876), (43, 76);
+SELECT * FROM tabela;
+SELECT id1, id2 FROM id3;
+SELECT * FROM id1 WHERE id2 = 45;
+SELECT * FROM id1 ORDER BY id2;
+UPDATE id1 SET id2 = 45 WHERE id2 = 90;
+DELETE FROM id1 WHERE id2 = 45;
+TRUNCATE TABLE id1;

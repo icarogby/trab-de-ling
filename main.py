@@ -1,11 +1,17 @@
-from sqlParser import sqlParser
+# TRABALHO DE LINGUAGENS DE PROGRAMAÇÃO
+# Alunos: Ícaro Gabryel de Araujo Silva e Claudiney Ryan da Silva
+# Parser SQL
+
+from Parser import sqlParser
 
 def main():
-    with open ("comandos.txt", "r") as file:
-        comandos = file.read()
+    while True:
+        entrada = input("Digite um ou mais comandos SQL: ")
 
-    teste = sqlParser(comandos)
-
+        try:
+            sqlParser(entrada)
+        except:
+            continue
 
 if __name__ == "__main__":
     main()

@@ -8,9 +8,6 @@ def getTipos():
     return ["TEXT", "CHAR", "VARCHAR", "INT", "BIT" "BINARY", "DATETIME", "FLOAT", "DOUBLE", "DECIMAL", "DATE", "TIME"]
 
 class sqlParser():
-    tokens = [] # Lista que irá guardar os tokens
-    i = -1 # Índice que irá pegar o token atual da lista de tokens
-
     # Lista com o alfabeto da linguagem, palavras reservadas e tipos de dados
     alphabet = getAlphabet()
     reserveds = getReserveds()
@@ -19,8 +16,12 @@ class sqlParser():
     # Variável que irá guardar os tokens toda vez que chamar a função getToken()
     token = ""
 
+    def __init__(self):
+        self.tokens = [] # Lista que irá guardar os tokens
+        self.i = -1 # Índice que irá pegar o token atual da lista de tokens
+
     # Inicia a classe passando a String de entrada e chamando o analizador léxico
-    def __init__(self, word) -> None:
+    def parse(self, word):
         self.lexer(word)
     
     # Função que separa a String de entrada em tokens

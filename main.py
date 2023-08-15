@@ -5,13 +5,17 @@
 from Parser import sqlParser
 
 def main():
-    while True:
-        entrada = input("Digite um ou mais comandos SQL: ")
+    entrada = input("Digite um ou mais comandos SQL: ")
+    obj = sqlParser()
+    
+    try:
+        obj.parse(entrada)
+    except Exception as e:
+        print(e)
 
-        try:
-            sqlParser(entrada)
-        except:
-            continue
+    del obj
+
 
 if __name__ == "__main__":
-    main()
+    while True:
+        main()
